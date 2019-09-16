@@ -8,7 +8,7 @@
 
 using namespace std;
 typedef std::map<std::string,int>  mapT;
-
+/*WTF*/
 
 
 
