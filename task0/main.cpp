@@ -94,6 +94,7 @@ void write_mymap_to_csv_file(string filename, mymap &result_map)
        // cout << it->first << ": " << it->second << '\n';
         it++;
     }
+    out.close();
 }
 
 
