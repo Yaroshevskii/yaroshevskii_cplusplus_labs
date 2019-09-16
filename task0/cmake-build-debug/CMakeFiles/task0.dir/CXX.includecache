@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Andy/CLionProjects/cplusplus_lab0/task0/main.cpp
+iostream
+-
+vector
+-
+sstream
+-
+bits/stdc++.h
+-
+regex
+-
+map
+-
+string
+-
+algorithm
+-
+cctype
+-
+

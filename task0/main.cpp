@@ -2,37 +2,47 @@
 #include <vector>
 #include <sstream>
 #include <bits/stdc++.h>
-#include <locale>
 #include <regex>
 #include <map>
+#include <string>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
-typedef std::map<std::string,int>  mapT;
+typedef std::map<std::string, int>  mapT;
 
+typedef struct{
+    mapT indexes;
+    int count;
+}mymap;
 
-
-
-void build_map(vector<string> items, mapT &result_map) {
+void build_mymap(vector<string> items, mymap &result_map) {
 
     vector<string>::iterator it;
     mapT::iterator itr;
+    string item = "";
+
     for (it = items.begin(); it != items.end(); ++it) {
-        cout << *it << " ";
-
-        if (result_map.find(*it) == result_map.end()) {
-            result_map.insert(pair<string, int>(*it, 1));
+      //  cout << *it << " ";
+        item = it->data();
+        transform(item.begin(), item.end(), item.begin(), ::tolower);
+        itr = result_map.indexes.find(item);
+        if (itr == result_map.indexes.end()) {
+            result_map.indexes.insert(pair<string, int>(item, 1));
         } else{
-            result_map[*it]++;
+            itr->second++;
         }
+        result_map.count++;
     }
-    cout << endl;
+   // cout << endl;
 
-
-    for (itr = result_map.begin(); itr != result_map.end(); itr++)
+/*
+    for (itr = result_map.indexes.begin(); itr != result_map.indexes.end(); itr++)
     {
         std::cout << itr->first << '=' << itr->second << endl;
     }
     cout << endl;
+*/
 
 }
 
@@ -50,48 +60,12 @@ vector<string> split_str(string item_string)
         item_string = words.suffix();
     }
 
-
-
-/*
-    vector<string>::iterator it;
-    for(it = ret.begin(); it != ret.end(); ++it) {
-        cout << *it << " ";
-    }
-    cout << endl;
-*/
-    /*
-    const string reg = "\\W|_+";
-    std::regex rgx(reg, std::regex_constants::collate | std::regex_constants::icase);
-    std::sregex_token_iterator iter(item_string.begin(),
-                                    item_string.end(),
-                                    rgx,
-                                    -1);
-    std::sregex_token_iterator end;
-    for ( ; iter != end; ++iter)
-        if (*iter != "") {
-            std::cout << *iter << '\n';
-        }
-    */
-
 return ret;
 
 }
 
-void read_file_by_line(std::string filename, mapT &result_map )
+void read_file_by_line_into_mymap(std::string filename, mymap &result_map )
 {
-    /*
-    std::vector<byte> newVector{};
-    std::ifstream ifs(filename,std::ios::in | std::ifstream::binary);
-    std::istreambuf_iterator<byte> iter(ifs);
-    std::istreambuf_iterator<byte> end{};
-    std::copy(iter,end,std::back_inserter(newVector));
-    ifs.close();
-
-    string ret(newVector.begin(), newVector.end());
-    cout << ret << endl;
-    split_str(ret);
-*/
-
     string str = "";
     std::ifstream in(filename);
 
@@ -100,38 +74,53 @@ void read_file_by_line(std::string filename, mapT &result_map )
         while (getline(in, str))
         {
             //  std::cout << str << std::endl;
-            build_map(split_str(str),result_map);
+            build_mymap(split_str(str),result_map);
         }
     }
     in.close();     // закрываем файл
 
 }
 
-int main() {
-    mapT indexs;
-    //std::locale::global(std::locale(""));
 
+void write_mymap_into_csv_file(string filename, mymap &result_map)
+{
+    multimap<int, string> reverseMyMap;
+    for (pair<string, int> pair : result_map.indexes) {
+            reverseMyMap.insert(std::pair<int, string>(pair.second, pair.first) );
+         }
 
-    //string str = "ели булки три два раз";
-//    string str = "";
-
-/*
-    std::ifstream in("test1.txt");
-
-    if (in.is_open())
-    {
-        while (getline(in, str))
+    std::ofstream out(filename);
+   // cout << "Reverse:\n";
+    multimap<int, string>::reverse_iterator it = reverseMyMap.rbegin();
+    while (it != reverseMyMap.rend()) {
+        if (out.is_open())
         {
-          //  std::cout << str << std::endl;
-            split_str(str);
+            out << it->second << ", " << it->first << ", " << (static_cast<float>(it->first)/result_map.count)*100.0f << "%" << endl;
         }
+       // cout << it->first << ": " << it->second << '\n';
+        it++;
     }
-    in.close();     // закрываем файл
-    */
+    out.close();
+}
 
 
-    read_file_by_line("test1.txt", indexs);
 
-    
+int main(int argc, char* argv[]) {
+
+    if (argc < 3) {
+        std::cerr << "Usage: " << argv[0] << "SOURCE DESTINATION" << std::endl;
+        return 1;
+    }
+
+    mymap indexs;
+    indexs.count = 0;
+
+    //string inputfile = "test1.txt", outputfile = "output1.csv";
+    string inputfile = argv[1], outputfile = argv[2];
+
+
+    read_file_by_line_into_mymap(inputfile, indexs);
+    write_mymap_into_csv_file(outputfile, indexs);
+
     return 0;
 }

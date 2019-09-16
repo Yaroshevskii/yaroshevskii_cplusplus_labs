@@ -11,7 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a3e1ff-e5f5-4310-9feb-dcedd275975c" name="Default Changelist" comment="" />
+    <list default="true" id="63a3e1ff-e5f5-4310-9feb-dcedd275975c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task0.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task0.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task0.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task0.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/task0.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/task0.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/test1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +30,13 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1QbOzUAc4uUr7D1zWXqMOCMeD4u" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
@@ -41,7 +54,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="task0" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="task0" TARGET_NAME="task0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="task0" RUN_TARGET_NAME="task0">
+    <configuration name="task0" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="shakespeare.txt output1.csv" PASS_PARENT_ENVS_2="true" PROJECT_NAME="task0" TARGET_NAME="task0" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="task0" RUN_TARGET_NAME="task0">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -65,10 +78,41 @@
       <workItem from="1568442434762" duration="1657000" />
       <workItem from="1568482547414" duration="236000" />
       <workItem from="1568397129786" duration="10000" />
+      <workItem from="1568617762616" duration="337000" />
+      <workItem from="1568632799221" duration="1920000" />
+      <workItem from="1568645901037" duration="3868000" />
+      <workItem from="1568650331853" duration="179000" />
+      <workItem from="1568650853274" duration="713000" />
+      <workItem from="1568652192876" duration="1752000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1568617858935</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568617858935</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
