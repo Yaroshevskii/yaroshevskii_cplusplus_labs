@@ -7,35 +7,36 @@
 #include <map>
 
 using namespace std;
-typedef std::map<std::string,int>  mapT;
+typedef std::map<std::string, int>  mapT;
 
 typedef struct{
     mapT indexes;
     int count;
 }mymap;
 
-void build_map(vector<string> items, mymap &result_map) {
+void build_mymap(vector<string> items, mymap &result_map) {
 
     vector<string>::iterator it;
     mapT::iterator itr;
     for (it = items.begin(); it != items.end(); ++it) {
       //  cout << *it << " ";
-
-        if (result_map.indexes.find(*it) == result_map.indexes.end()) {
+        itr = result_map.indexes.find(*it);
+        if (itr == result_map.indexes.end()) {
             result_map.indexes.insert(pair<string, int>(*it, 1));
         } else{
-            result_map.indexes[*it]++;
+            itr->second++;
         }
         result_map.count++;
     }
    // cout << endl;
 
-
+/*
     for (itr = result_map.indexes.begin(); itr != result_map.indexes.end(); itr++)
     {
         std::cout << itr->first << '=' << itr->second << endl;
     }
     cout << endl;
+*/
 
 }
 
@@ -57,7 +58,7 @@ return ret;
 
 }
 
-void read_file_by_line_into_map(std::string filename, mymap &result_map )
+void read_file_by_line_into_mymap(std::string filename, mymap &result_map )
 {
     string str = "";
     std::ifstream in(filename);
@@ -67,12 +68,35 @@ void read_file_by_line_into_map(std::string filename, mymap &result_map )
         while (getline(in, str))
         {
             //  std::cout << str << std::endl;
-            build_map(split_str(str),result_map);
+            build_mymap(split_str(str),result_map);
         }
     }
     in.close();     // закрываем файл
 
 }
+
+
+void write_mymap_to_csv_file(string filename, mymap &result_map)
+{
+    multimap<int, string> reverseMyMap;
+    for (pair<string, int> pair : result_map.indexes) {
+            reverseMyMap.insert(std::pair<int, string>(pair.second, pair.first) );
+         }
+
+    std::ofstream out(filename);
+   // cout << "Reverse:\n";
+    multimap<int, string>::reverse_iterator it = reverseMyMap.rbegin();
+    while (it != reverseMyMap.rend()) {
+        if (out.is_open())
+        {
+            out << it->second << ", " << it->first << ", " << (static_cast<float>(it->first)/result_map.count)*100.0f << "%" << endl;
+        }
+       // cout << it->first << ": " << it->second << '\n';
+        it++;
+    }
+}
+
+
 
 int main(int argc, char* argv[]) {
 
@@ -83,12 +107,13 @@ int main(int argc, char* argv[]) {
 
     mymap indexs;
     indexs.count = 0;
-    //string inputfile = "test1.txt", outputfile = "output1.txt";
-    string inputfile = argv[1], outputfile = argv[1];
 
-    read_file_by_line_into_map(inputfile, indexs);
+    //string inputfile = "test1.txt", outputfile = "output1.csv";
+    string inputfile = argv[1], outputfile = argv[2];
 
-    cout << endl << "count = " <<   indexs.count << endl;
+
+    read_file_by_line_into_mymap(inputfile, indexs);
+    write_mymap_to_csv_file(outputfile, indexs);
 
     return 0;
 }

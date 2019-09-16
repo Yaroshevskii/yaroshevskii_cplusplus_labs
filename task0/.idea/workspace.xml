@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task0.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/task0.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/task0.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/task0.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/test1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,6 +78,7 @@
       <workItem from="1568397129786" duration="10000" />
       <workItem from="1568617762616" duration="337000" />
       <workItem from="1568632799221" duration="1920000" />
+      <workItem from="1568645901037" duration="3868000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1568617858935</created>
