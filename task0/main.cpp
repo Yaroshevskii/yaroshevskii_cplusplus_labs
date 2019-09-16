@@ -2,9 +2,11 @@
 #include <vector>
 #include <sstream>
 #include <bits/stdc++.h>
-#include <locale>
 #include <regex>
 #include <map>
+#include <string>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
 typedef std::map<std::string, int>  mapT;
@@ -18,11 +20,15 @@ void build_mymap(vector<string> items, mymap &result_map) {
 
     vector<string>::iterator it;
     mapT::iterator itr;
+    string item = "";
+
     for (it = items.begin(); it != items.end(); ++it) {
       //  cout << *it << " ";
-        itr = result_map.indexes.find(*it);
+        item = it->data();
+        transform(item.begin(), item.end(), item.begin(), ::tolower);
+        itr = result_map.indexes.find(item);
         if (itr == result_map.indexes.end()) {
-            result_map.indexes.insert(pair<string, int>(*it, 1));
+            result_map.indexes.insert(pair<string, int>(item, 1));
         } else{
             itr->second++;
         }
@@ -76,7 +82,7 @@ void read_file_by_line_into_mymap(std::string filename, mymap &result_map )
 }
 
 
-void write_mymap_to_csv_file(string filename, mymap &result_map)
+void write_mymap_into_csv_file(string filename, mymap &result_map)
 {
     multimap<int, string> reverseMyMap;
     for (pair<string, int> pair : result_map.indexes) {
@@ -114,7 +120,7 @@ int main(int argc, char* argv[]) {
 
 
     read_file_by_line_into_mymap(inputfile, indexs);
-    write_mymap_to_csv_file(outputfile, indexs);
+    write_mymap_into_csv_file(outputfile, indexs);
 
     return 0;
 }

@@ -15,10 +15,14 @@ sstream
 -
 bits/stdc++.h
 -
-locale
--
 regex
 -
 map
+-
+string
+-
+algorithm
+-
+cctype
 -
 
