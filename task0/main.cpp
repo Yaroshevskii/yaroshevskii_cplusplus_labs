@@ -8,27 +8,30 @@
 
 using namespace std;
 typedef std::map<std::string,int>  mapT;
-/*WTF*/
 
+typedef struct{
+    mapT indexes;
+    int count;
+}mymap;
 
-
-void build_map(vector<string> items, mapT &result_map) {
+void build_map(vector<string> items, mymap &result_map) {
 
     vector<string>::iterator it;
     mapT::iterator itr;
     for (it = items.begin(); it != items.end(); ++it) {
-        cout << *it << " ";
+      //  cout << *it << " ";
 
-        if (result_map.find(*it) == result_map.end()) {
-            result_map.insert(pair<string, int>(*it, 1));
+        if (result_map.indexes.find(*it) == result_map.indexes.end()) {
+            result_map.indexes.insert(pair<string, int>(*it, 1));
         } else{
-            result_map[*it]++;
+            result_map.indexes[*it]++;
         }
+        result_map.count++;
     }
-    cout << endl;
+   // cout << endl;
 
 
-    for (itr = result_map.begin(); itr != result_map.end(); itr++)
+    for (itr = result_map.indexes.begin(); itr != result_map.indexes.end(); itr++)
     {
         std::cout << itr->first << '=' << itr->second << endl;
     }
@@ -50,48 +53,12 @@ vector<string> split_str(string item_string)
         item_string = words.suffix();
     }
 
-
-
-/*
-    vector<string>::iterator it;
-    for(it = ret.begin(); it != ret.end(); ++it) {
-        cout << *it << " ";
-    }
-    cout << endl;
-*/
-    /*
-    const string reg = "\\W|_+";
-    std::regex rgx(reg, std::regex_constants::collate | std::regex_constants::icase);
-    std::sregex_token_iterator iter(item_string.begin(),
-                                    item_string.end(),
-                                    rgx,
-                                    -1);
-    std::sregex_token_iterator end;
-    for ( ; iter != end; ++iter)
-        if (*iter != "") {
-            std::cout << *iter << '\n';
-        }
-    */
-
 return ret;
 
 }
 
-void read_file_by_line(std::string filename, mapT &result_map )
+void read_file_by_line_into_map(std::string filename, mymap &result_map )
 {
-    /*
-    std::vector<byte> newVector{};
-    std::ifstream ifs(filename,std::ios::in | std::ifstream::binary);
-    std::istreambuf_iterator<byte> iter(ifs);
-    std::istreambuf_iterator<byte> end{};
-    std::copy(iter,end,std::back_inserter(newVector));
-    ifs.close();
-
-    string ret(newVector.begin(), newVector.end());
-    cout << ret << endl;
-    split_str(ret);
-*/
-
     string str = "";
     std::ifstream in(filename);
 
@@ -107,31 +74,21 @@ void read_file_by_line(std::string filename, mapT &result_map )
 
 }
 
-int main() {
-    mapT indexs;
-    //std::locale::global(std::locale(""));
+int main(int argc, char* argv[]) {
 
-
-    //string str = "ели булки три два раз";
-//    string str = "";
-
-/*
-    std::ifstream in("test1.txt");
-
-    if (in.is_open())
-    {
-        while (getline(in, str))
-        {
-          //  std::cout << str << std::endl;
-            split_str(str);
-        }
+    if (argc < 3) {
+        std::cerr << "Usage: " << argv[0] << "SOURCE DESTINATION" << std::endl;
+        return 1;
     }
-    in.close();     // закрываем файл
-    */
 
+    mymap indexs;
+    indexs.count = 0;
+    //string inputfile = "test1.txt", outputfile = "output1.txt";
+    string inputfile = argv[1], outputfile = argv[1];
 
-    read_file_by_line("test1.txt", indexs);
+    read_file_by_line_into_map(inputfile, indexs);
 
-    
+    cout << endl << "count = " <<   indexs.count << endl;
+
     return 0;
 }
