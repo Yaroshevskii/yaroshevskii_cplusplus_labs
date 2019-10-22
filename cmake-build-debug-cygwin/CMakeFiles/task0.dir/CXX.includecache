@@ -6,5 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp
+iostream
+-
+map
+-
+vector
+-
+unordered_map
+-
 
