@@ -9,10 +9,20 @@
 /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp
 iostream
 -
-map
--
 vector
 -
-unordered_map
+sstream
+-
+bits/stdc++.h
+-
+regex
+-
+map
+-
+string
+-
+algorithm
+-
+cctype
 -
 
