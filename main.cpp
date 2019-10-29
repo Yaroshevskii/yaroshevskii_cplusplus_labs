@@ -7,6 +7,9 @@
 #include <string>
 #include <algorithm>
 #include <cctype>
+#include <windows.h>
+#include <cstdlib>
+
 
 
 using namespace std;
@@ -232,8 +235,17 @@ void mGeneration::printSpace(int gen)
     }*/
 
 
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD cor = {0,0};
+    SetConsoleCursorPosition(hConsole,cor);
+    system("clear");
+
+
     mapCell::iterator itr;
-    cout << "=========="  << gen << "==========" << endl;
+
+
+    string strout = "";
+
     for (int i=0; i<n; i++)
     {
         for (int j=0; j<m; j++)
@@ -243,15 +255,19 @@ void mGeneration::printSpace(int gen)
 
             if (itr == space.end())
             {
-                cout << mCell::DeadSymbol;
+                strout += mCell::DeadSymbol;
             } else
             {
-                cout << mCell::AliveSymbol;
+                strout += mCell::AliveSymbol;
             }
         }
-        cout << endl;
+        //cout << endl;
+        strout += '\n';
     }
-    cout << "=====================" << endl;
+    cout << strout;
+
+    Sleep(200);
+
 }
 
 
@@ -322,8 +338,8 @@ void mGeneration::parseString(string item, int line_number)
 
 int main() {
 
-    mGeneration mg("world.txt");
-    for (int i=0; i<10; i++)
+    mGeneration mg("gun.txt");
+    for (int i=0; i<1000; i++)
     {
         mg.printSpace(i);
         mg.NextGen();
@@ -332,7 +348,7 @@ int main() {
             break;
         }
     }
-
+    cin.get();
 
     return 0;
 }

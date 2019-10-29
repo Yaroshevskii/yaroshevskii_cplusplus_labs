@@ -35,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -87,6 +87,7 @@
       <workItem from="1572352487095" duration="480000" />
       <workItem from="1572353024252" duration="2861000" />
       <workItem from="1572360112645" duration="115000" />
+      <workItem from="1572361113393" duration="3299000" />
     </task>
     <servers />
   </component>
