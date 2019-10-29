@@ -151,33 +151,41 @@ void mGeneration::NextGen() {
 
 
 
-        for (auto it = space.begin(); it != space.end(); ++it) {
-            //cout << " potentialCell element = " << it->first << " neighbours = ";
-            item = neighbours(it->first);
-            for (auto i: item) {
-                itr = potentialCell.find(i);
-                if (itr == potentialCell.end()) {
-                    potentialCell.emplace(pair<int, mCell>(i, mCell(1, true)));
-                } else {
-                    potentialCell[i]++;
-                }
-                //cout << i << ' ';
+    for (auto it = space.begin(); it != space.end(); ++it)
+    {
+        //cout << " potentialCell element = " << it->first << " neighbours = ";
+        item = neighbours(it->first);
+        for (auto i: item)
+        {
+            itr = potentialCell.find(i);
+            if (itr == potentialCell.end())
+            {
+                potentialCell.emplace(pair<int, mCell>(i, mCell(1, true)));
+            } else
+            {
+                potentialCell[i]++;
             }
-            //cout << endl;
+            //cout << i << ' ';
         }
+        //cout << endl;
+    }
 
-        for (auto it = potentialCell.begin(); it != potentialCell.end();) {
-            if (it->second.getvalue() != countCellForAlive) {
-                it = potentialCell.erase(it);
-            } else {
-                //cout << " potentialCell index = " << it->first << " value = " << it->second.getvalue() << endl;
-                space.emplace(pair<int, mCell>(it->first, mCell(3, true)));
-                ++it;
-            }
+    for (auto it = potentialCell.begin(); it != potentialCell.end();)
+    {
+        if (it->second.getvalue() != countCellForAlive)
+        {
+            it = potentialCell.erase(it);
+        } else
+        {
+            //cout << " potentialCell index = " << it->first << " value = " << it->second.getvalue() << endl;
+            space.emplace(pair<int, mCell>(it->first, mCell(3, true)));
+            ++it;
         }
+    }
 
 
-    for (auto it = space.begin(); it != space.end(); ++it) {
+    for (auto it = space.begin(); it != space.end(); ++it)
+    {
         //cout << " space element = " << it->first << " neighbours = ";
         item = neighbours(it->first);
         if (!it->second.GetIsNexGen())
