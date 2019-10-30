@@ -22,18 +22,16 @@ class mCell
 {
 private:
     int value;
-    bool isNextGen;
 public:
     static const char AliveSymbol = '*';
     static const char DeadSymbol = '_';
 
-    explicit mCell() : value(0), isNextGen(false) {}
-    mCell(int val, bool NextGen) : value(val), isNextGen(NextGen) {}
+    explicit mCell() : value(0) {}
+    mCell(int val) : value(val) {}
 
     friend mCell& operator++ (mCell& i, int);
     int getvalue() const;
-    bool GetIsNexGen();
-    void SetValue(int val, bool isGen);
+    void SetValue(int val);
 
 
 };
@@ -80,15 +78,9 @@ int mCell::getvalue() const
     return value;
 }
 
-void mCell::SetValue(int val, bool isGen)
+void mCell::SetValue(int val)
 {
     value = val;
-    isNextGen = isGen;
-}
-
-bool mCell::GetIsNexGen()
-{
-    return isNextGen;
 }
 
 int mGeneration::CountOfElements()
@@ -163,7 +155,7 @@ void mGeneration::NextGen() {
             itr = potentialCell.find(i);
             if (itr == potentialCell.end())
             {
-                potentialCell.emplace(pair<int, mCell>(i, mCell(1, true)));
+                potentialCell.emplace(pair<int, mCell>(i, mCell(1) ) );
             } else
             {
                 potentialCell[i]++;
@@ -171,6 +163,22 @@ void mGeneration::NextGen() {
             //cout << i << ' ';
         }
         //cout << endl;
+    }
+
+    for (auto it = space.begin(); it != space.end(); ++it)
+    {
+        //cout << " space element = " << it->first << " neighbours = ";
+        item = neighbours(it->first);
+        for (auto i: item)
+        {
+            itr = space.find(i);
+            if (itr != space.end())
+            {
+                it->second++;
+            }
+            //cout << i << ' ';
+        }
+        //cout << " value = " << it->second.getvalue() << " isNextGen = " << it->second.GetIsNexGen() << endl;
     }
 
     for (auto it = potentialCell.begin(); it != potentialCell.end();)
@@ -181,34 +189,11 @@ void mGeneration::NextGen() {
         } else
         {
             //cout << " potentialCell index = " << it->first << " value = " << it->second.getvalue() << endl;
-            space.emplace(pair<int, mCell>(it->first, mCell(3, true)));
+            space.emplace(pair<int, mCell>(it->first, mCell(3)));
             ++it;
         }
     }
 
-
-    for (auto it = space.begin(); it != space.end(); ++it)
-    {
-        //cout << " space element = " << it->first << " neighbours = ";
-        item = neighbours(it->first);
-        if (!it->second.GetIsNexGen())
-        {
-            for (auto i: item)
-            {
-                itr = space.find(i);
-                if (itr != space.end())
-                {
-                    if (!space[i].GetIsNexGen())
-                    {
-                        it->second++;
-                    }
-
-                }
-                //cout << i << ' ';
-            }
-            //cout << " value = " << it->second.getvalue() << " isNextGen = " << it->second.GetIsNexGen() << endl;
-        }
-    }
 
     for (auto it = space.begin(); it != space.end();)
     {
@@ -217,7 +202,7 @@ void mGeneration::NextGen() {
             it = space.erase(it);
         } else
         {
-            space[it->first].SetValue(0, false);
+            space[it->first].SetValue(0);
             ++it;
         }
     }
@@ -338,7 +323,9 @@ void mGeneration::parseString(string item, int line_number)
 
 int main() {
 
-    mGeneration mg("gun.txt");
+    //mGeneration mg("gun.txt");
+    //mGeneration mg("LWSS.txt");
+    mGeneration mg("world.txt");
     for (int i=0; i<1000; i++)
     {
         mg.printSpace(i);
