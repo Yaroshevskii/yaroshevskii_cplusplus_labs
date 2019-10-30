@@ -178,19 +178,6 @@ void mGeneration::NextGen()
         //cout << " value = " << it->second.getvalue() << " isNextGen = " << it->second.GetIsNexGen() << endl;
     }
 
-    for (auto it = potentialCell.begin(); it != potentialCell.end();)
-    {
-        if (it->second.getvalue() != countCellForAlive)
-        {
-            it = potentialCell.erase(it);
-        } else
-        {
-            //cout << " potentialCell index = " << it->first << " value = " << it->second.getvalue() << endl;
-            space.emplace(pair<int, mCell>(it->first, mCell(3)));
-            ++it;
-        }
-    }
-
 
     for (auto it = space.begin(); it != space.end();)
     {
@@ -204,6 +191,18 @@ void mGeneration::NextGen()
         }
     }
 
+    for (auto it = potentialCell.begin(); it != potentialCell.end();)
+    {
+        if (it->second.getvalue() != countCellForAlive)
+        {
+            it = potentialCell.erase(it);
+        } else
+        {
+            //cout << " potentialCell index = " << it->first << " value = " << it->second.getvalue() << endl;
+            space.emplace(pair<int, mCell>(it->first, mCell(0)));
+            ++it;
+        }
+    }
 }
 
 
@@ -322,7 +321,7 @@ void mUniverse::Start()
         if (CountOfIteration < 1)
         {
             gen.printSpace();
-            Sleep(200);
+            Sleep(100);
             if (CountOfIteration == 0)
             {
                 getchar();
