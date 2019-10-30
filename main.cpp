@@ -50,9 +50,8 @@ private:
 public:
     explicit mGeneration(string FileName);
     mGeneration(const mGeneration &item): n(item.n), m(item.m), msize(item.msize), space(item.space) {}
-    void printSpace(int);
+    void printSpace();
     void NextGen();
-    int CountOfElements();
     bool isAliveExist();
     vector<int> neighbours(int);
 };
@@ -60,9 +59,11 @@ public:
 class mUniverse
 {
 private:
-    mGeneration gen, prev_gen;
+    mGeneration gen;
+    int CountOfIteration;
 public:
-
+    mUniverse(string filename, int iterations) : gen(filename), CountOfIteration(iterations) {}
+    void Start();
 };
 
 
@@ -81,11 +82,6 @@ int mCell::getvalue() const
 void mCell::SetValue(int val)
 {
     value = val;
-}
-
-int mGeneration::CountOfElements()
-{
-    return space.size();
 }
 
 bool mGeneration::isAliveExist()
@@ -137,13 +133,14 @@ vector<int> mGeneration::neighbours(int item)
     return ret;
 }
 
-void mGeneration::NextGen() {
-
+void mGeneration::NextGen()
+{
     mapCell potentialCell;
     mapCell::iterator itr;
     vector<int> item;
     const int countCellForAlive = 3;
-
+    const int minCellForAlive = 2;
+    const int maxCellForAlive = 3;
 
 
     for (auto it = space.begin(); it != space.end(); ++it)
@@ -197,7 +194,7 @@ void mGeneration::NextGen() {
 
     for (auto it = space.begin(); it != space.end();)
     {
-        if ((it->second.getvalue() < 2) || (it->second.getvalue() > 3) )
+        if ((it->second.getvalue() < minCellForAlive) || (it->second.getvalue() > maxCellForAlive) )
         {
             it = space.erase(it);
         } else
@@ -210,7 +207,7 @@ void mGeneration::NextGen() {
 }
 
 
-void mGeneration::printSpace(int gen)
+void mGeneration::printSpace()
 {
 
 
@@ -219,11 +216,13 @@ void mGeneration::printSpace(int gen)
         cout << " index = " << element.first << " value = " << element.second.getvalue() << endl;
     }*/
 
-
+    system("clear");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD cor = {0,0};
+    cor.X = 0;
+    cor.Y = 0;
     SetConsoleCursorPosition(hConsole,cor);
-    system("clear");
+
 
 
     mapCell::iterator itr;
@@ -250,9 +249,6 @@ void mGeneration::printSpace(int gen)
         strout += '\n';
     }
     cout << strout;
-
-    Sleep(200);
-
 }
 
 
@@ -301,7 +297,6 @@ pair<int, int>  mGeneration::convert_single_index_to_double(int index)
 
 void mGeneration::parseString(string item, int line_number)
 {
-
     for (int i=0; i < static_cast<int>(item.size()); i++)
     {
         if (item[i] == mCell::AliveSymbol)
@@ -318,24 +313,55 @@ void mGeneration::parseString(string item, int line_number)
 }
 
 
-
-
-
-int main() {
-
-    //mGeneration mg("gun.txt");
-    //mGeneration mg("LWSS.txt");
-    mGeneration mg("world.txt");
-    for (int i=0; i<1000; i++)
+void mUniverse::Start()
+{
+    for (int i=0; i< (CountOfIteration > 0 ? CountOfIteration : INT_MAX); i++ )
     {
-        mg.printSpace(i);
-        mg.NextGen();
-        if (mg.isAliveExist() == false)
+        gen.NextGen();
+
+        if (CountOfIteration < 1)
+        {
+            gen.printSpace();
+            Sleep(200);
+            if (CountOfIteration == 0)
+            {
+                getchar();
+            }
+        }
+
+        if (gen.isAliveExist() == false)
         {
             break;
         }
     }
-    cin.get();
+
+    if (CountOfIteration > 0)
+    {
+        gen.printSpace();
+        getchar();
+    }
+}
+
+
+
+int main(int argc, char* argv[])
+{
+
+    if (argc < 3) {
+        std::cerr << "Usage: " << argv[0] << "SOURCE DESTINATION" << std::endl;
+        return 1;
+    }
+
+    string inputfile = argv[1];
+    int iterations = atoi(argv[2]);
+    //cout << " filename = " << inputfile << " iteration = " << iterations << endl;
+
+
+
+
+    mUniverse life(inputfile, iterations);
+    life.Start();
+
 
     return 0;
 }
