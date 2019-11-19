@@ -17,16 +17,12 @@ int main(int argc, char* argv[])
 
     string inputfile = argv[1];
     int iterations = atoi(argv[2]);
-    //cout << " filename = " << inputfile << " iteration = " << iterations << endl;
-
-
 
     mGeneration *gen = new mGeneration(inputfile);
     mUniverse life(gen, iterations);
+
     life.Go();
 
-
     delete gen;
-
     return 0;
 }

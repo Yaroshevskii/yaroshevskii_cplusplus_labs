@@ -2,7 +2,7 @@
 // Created by Andy on 19.11.2019.
 //
 
-#include "mLife.h"
+
 #include "mUniverse.h"
 
 

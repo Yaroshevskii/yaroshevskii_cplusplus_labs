@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.cpp
-mLife.h
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
-
 /cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 iostream
 -
@@ -35,34 +31,10 @@ cstdlib
 -
 
 /cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp
-mLife.h
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 mUniverse.h
 /cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
 
 /cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
-iostream
--
-vector
--
-sstream
--
-bits/stdc++.h
--
-regex
--
-map
--
-string
--
-algorithm
--
-cctype
--
-windows.h
--
-cstdlib
--
 mLife.h
 /cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 

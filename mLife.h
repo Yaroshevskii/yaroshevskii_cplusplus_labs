@@ -23,6 +23,15 @@
 //universe
 using namespace std;
 
+class IGeneration
+{
+public:
+    virtual void NextGen() = 0;
+    virtual bool isAliveExist() = 0;
+    virtual void printSpace() = 0;
+    virtual ~IGeneration(){}
+};
+
 class mCell
 {
 private:
@@ -42,18 +51,6 @@ public:
 };
 
 typedef std::unordered_map<int, mCell> mapCell;
-
-
-class IGeneration
-{
-public:
-    virtual void NextGen() = 0;
-    virtual bool isAliveExist() = 0;
-    virtual void printSpace() = 0;
-    virtual ~IGeneration(){}
-};
-
-
 
 class mGeneration : public IGeneration
 {

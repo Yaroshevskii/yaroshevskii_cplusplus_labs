@@ -5,18 +5,11 @@
 #ifndef TASK0_MUNIVERSE_H
 #define TASK0_MUNIVERSE_H
 
-#include <iostream>
-#include <vector>
-#include <sstream>
-#include <bits/stdc++.h>
-#include <regex>
-#include <map>
-#include <string>
-#include <algorithm>
-#include <cctype>
-#include <windows.h>
-#include <cstdlib>
+
 #include "mLife.h"
+
+
+
 
 
 class mUniverse
