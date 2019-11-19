@@ -7,12 +7,15 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug-Cygwin" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Cygwin" />
+      <configuration PROFILE_NAME="Release-Cygwin" CONFIG_NAME="Release" TOOLCHAIN_NAME="Cygwin" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="639bc2db-925b-4f7f-9960-75f4fc90ffa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/task0.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/task0.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/task0.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/task0.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/task0.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/task0.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/task0.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/task0.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -26,7 +29,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-Cygwin" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release-Cygwin" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -34,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -49,12 +52,12 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-Cygwin" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release-Cygwin" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="task0" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="gun.txt -1" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-Cygwin" RUN_TARGET_PROJECT_NAME="task0" RUN_TARGET_NAME="task0" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="task0" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="gun.txt -1" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release-Cygwin" RUN_TARGET_PROJECT_NAME="task0" RUN_TARGET_NAME="task0" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -89,6 +92,12 @@
       <workItem from="1572361113393" duration="3299000" />
       <workItem from="1572409706495" duration="3721000" />
       <workItem from="1572413640340" duration="435000" />
+      <workItem from="1572414154031" duration="970000" />
+      <workItem from="1572417446496" duration="75000" />
+      <workItem from="1572528966618" duration="1494000" />
+      <workItem from="1572533055187" duration="1364000" />
+      <workItem from="1573706942665" duration="3513000" />
+      <workItem from="1574137682694" duration="13178000" />
     </task>
     <servers />
   </component>

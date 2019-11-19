@@ -1,0 +1,4 @@
+C:\Users\Andy\.CLion2019.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin
