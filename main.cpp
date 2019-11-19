@@ -1,14 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <sstream>
-#include <bits/stdc++.h>
-#include <regex>
-#include <map>
-#include <string>
-#include <algorithm>
-#include <cctype>
-#include <windows.h>
-#include <cstdlib>
+
 #include "mLife.h"
 #include "mUniverse.h"
 
@@ -31,10 +21,12 @@ int main(int argc, char* argv[])
 
 
 
-
-    mUniverse life(inputfile, iterations);
+    mGeneration *gen = new mGeneration(inputfile);
+    mUniverse life(gen, iterations);
     life.Go();
 
+
+    delete gen;
 
     return 0;
 }

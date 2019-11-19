@@ -22,10 +22,17 @@
 class mUniverse
 {
 private:
-    mGeneration gen;
+    IGeneration *gen;
     int CountOfIteration;
 public:
-    mUniverse(string filename, int iterations) : gen(filename), CountOfIteration(iterations) {}
+    mUniverse(mGeneration *igen,  int iterations) : CountOfIteration(iterations)
+    {
+        gen = static_cast<IGeneration*>(igen);
+    }
+    /*mUniverse(IGeneration *igen, int iterations) : CountOfIteration(iterations)
+    {
+        gen = igen;
+    }*/
     void Go();
     void Start();
     void Start(int);

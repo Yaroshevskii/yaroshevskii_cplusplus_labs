@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs
+CMAKE_SOURCE_DIR = /cygdrive/c/cplusplus_labs/cplusplus_lab
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin
+CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/task0.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/task0.dir/flags.make
 
 CMakeFiles/task0.dir/main.cpp.o: CMakeFiles/task0.dir/flags.make
 CMakeFiles/task0.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/task0.dir/main.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task0.dir/main.cpp.o -c /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/task0.dir/main.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task0.dir/main.cpp.o -c /cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp
 
 CMakeFiles/task0.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task0.dir/main.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp > CMakeFiles/task0.dir/main.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp > CMakeFiles/task0.dir/main.cpp.i
 
 CMakeFiles/task0.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task0.dir/main.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp -o CMakeFiles/task0.dir/main.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp -o CMakeFiles/task0.dir/main.cpp.s
 
 CMakeFiles/task0.dir/mLife.cpp.o: CMakeFiles/task0.dir/flags.make
 CMakeFiles/task0.dir/mLife.cpp.o: ../mLife.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/task0.dir/mLife.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task0.dir/mLife.cpp.o -c /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/task0.dir/mLife.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task0.dir/mLife.cpp.o -c /cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.cpp
 
 CMakeFiles/task0.dir/mLife.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task0.dir/mLife.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.cpp > CMakeFiles/task0.dir/mLife.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.cpp > CMakeFiles/task0.dir/mLife.cpp.i
 
 CMakeFiles/task0.dir/mLife.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task0.dir/mLife.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.cpp -o CMakeFiles/task0.dir/mLife.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.cpp -o CMakeFiles/task0.dir/mLife.cpp.s
 
 CMakeFiles/task0.dir/mUniverse.cpp.o: CMakeFiles/task0.dir/flags.make
 CMakeFiles/task0.dir/mUniverse.cpp.o: ../mUniverse.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/task0.dir/mUniverse.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task0.dir/mUniverse.cpp.o -c /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/task0.dir/mUniverse.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task0.dir/mUniverse.cpp.o -c /cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp
 
 CMakeFiles/task0.dir/mUniverse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task0.dir/mUniverse.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.cpp > CMakeFiles/task0.dir/mUniverse.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp > CMakeFiles/task0.dir/mUniverse.cpp.i
 
 CMakeFiles/task0.dir/mUniverse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task0.dir/mUniverse.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.cpp -o CMakeFiles/task0.dir/mUniverse.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp -o CMakeFiles/task0.dir/mUniverse.cpp.s
 
 # Object files for target task0
 task0_OBJECTS = \
@@ -110,7 +110,7 @@ task0.exe: CMakeFiles/task0.dir/mLife.cpp.o
 task0.exe: CMakeFiles/task0.dir/mUniverse.cpp.o
 task0.exe: CMakeFiles/task0.dir/build.make
 task0.exe: CMakeFiles/task0.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable task0.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable task0.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/task0.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +123,6 @@ CMakeFiles/task0.dir/clean:
 .PHONY : CMakeFiles/task0.dir/clean
 
 CMakeFiles/task0.dir/depend:
-	cd /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/CMakeFiles/task0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/cplusplus_labs/cplusplus_lab /cygdrive/c/cplusplus_labs/cplusplus_lab /cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin /cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin /cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/CMakeFiles/task0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/task0.dir/depend
 

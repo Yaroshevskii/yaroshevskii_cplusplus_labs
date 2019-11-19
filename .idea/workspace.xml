@@ -57,7 +57,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="task0" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="gun.txt -1" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release-Cygwin" RUN_TARGET_PROJECT_NAME="task0" RUN_TARGET_NAME="task0" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="task0" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="gun.txt 1000000" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release-Cygwin" RUN_TARGET_PROJECT_NAME="task0" RUN_TARGET_NAME="task0" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -98,6 +98,7 @@
       <workItem from="1572533055187" duration="1364000" />
       <workItem from="1573706942665" duration="3513000" />
       <workItem from="1574137682694" duration="13178000" />
+      <workItem from="1574181899733" duration="2144000" />
     </task>
     <servers />
   </component>

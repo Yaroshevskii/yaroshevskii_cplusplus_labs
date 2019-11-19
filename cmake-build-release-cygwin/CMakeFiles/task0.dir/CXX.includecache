@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.cpp
+mLife.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
+
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 iostream
 -
 vector
@@ -30,13 +34,13 @@ windows.h
 cstdlib
 -
 
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.cpp
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp
 mLife.h
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 mUniverse.h
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
 
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
 iostream
 -
 vector
@@ -60,33 +64,11 @@ windows.h
 cstdlib
 -
 mLife.h
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp
-iostream
--
-vector
--
-sstream
--
-bits/stdc++.h
--
-regex
--
-map
--
-string
--
-algorithm
--
-cctype
--
-windows.h
--
-cstdlib
--
+/cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp
 mLife.h
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
 mUniverse.h
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
 

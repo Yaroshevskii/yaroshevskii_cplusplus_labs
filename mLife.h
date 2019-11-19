@@ -46,14 +46,16 @@ typedef std::unordered_map<int, mCell> mapCell;
 
 class IGeneration
 {
+public:
     virtual void NextGen() = 0;
     virtual bool isAliveExist() = 0;
     virtual void printSpace() = 0;
+    virtual ~IGeneration(){}
 };
 
 
 
-class mGeneration : IGeneration
+class mGeneration : public IGeneration
 {
 private:
     int n = 0, m = 0, msize = 0;
@@ -69,6 +71,7 @@ public:
     void printSpace();
     void NextGen();
     bool isAliveExist();
+    ~mGeneration(){};
 };
 
 

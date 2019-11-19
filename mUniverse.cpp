@@ -22,9 +22,9 @@ void mUniverse::Start(int count_itertation)
 {
     for (int i=0; i< count_itertation; i++ )
     {
-        gen.NextGen();
+        gen->NextGen();
 
-        if (gen.isAliveExist() == false)
+        if (gen->isAliveExist() == false)
         {
             break;
         }
@@ -32,7 +32,7 @@ void mUniverse::Start(int count_itertation)
 
     if (CountOfIteration > 0)
     {
-        gen.printSpace();
+        gen->printSpace();
         getchar();
     }
 }
@@ -42,11 +42,11 @@ void mUniverse::Start()
 {
     for (int i=0; i< INT_MAX; i++ )
     {
-        gen.NextGen();
+        gen->NextGen();
 
         if (CountOfIteration < 1)
         {
-            gen.printSpace();
+            gen->printSpace();
             Sleep(100);
             if (CountOfIteration == 0)
             {
@@ -54,7 +54,7 @@ void mUniverse::Start()
             }
         }
 
-        if (gen.isAliveExist() == false)
+        if (gen->isAliveExist() == false)
         {
             break;
         }
