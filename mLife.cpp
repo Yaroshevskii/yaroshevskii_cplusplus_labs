@@ -267,7 +267,8 @@ void mLife::set(int32_t row, int32_t column, bool value) {
     board[row][column] = value;
 }
 
-int32_t mLife::numb_of_alive_neighboors(int32_t row, int32_t column) {
+int32_t mLife::numb_of_alive_neighboors(int32_t row, int32_t column)
+{
     int32_t res = 0;
     int32_t di[] = {-1, -1, -1,  0, 0,  1, 1, 1};
     int32_t dj[] = {-1,  0,  1, -1, 1, -1, 0, 1};
@@ -318,7 +319,8 @@ mLife::mLife(string FileName)
     }
 }
 
-void mLife::NextGen() {
+void mLife::NextGen()
+{
     auto copy_board = board;
    // cout << " m = " << m << " n = " << n << endl;
     for (int32_t row = 0; row < m; ++row) {
@@ -340,7 +342,8 @@ void mLife::NextGen() {
     board = copy_board;
 }
 
-bool mLife::isAlive(int32_t row, int32_t column) {
+bool mLife::isAlive(int32_t row, int32_t column)
+{
    if ((row >= m) || (column >= n))
     {
         return false;

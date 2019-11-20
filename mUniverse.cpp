@@ -4,6 +4,7 @@
 
 
 #include "mUniverse.h"
+#include <chrono>
 
 
 void mUniverse::Go()
@@ -20,6 +21,10 @@ void mUniverse::Go()
 
 void mUniverse::Start(int count_itertation)
 {
+
+
+    auto t1 = std::chrono::steady_clock::now();
+
     for (int i=0; i< count_itertation; i++ )
     {
         gen->NextGen();
@@ -30,9 +35,14 @@ void mUniverse::Start(int count_itertation)
         }
     }
 
+    auto t2 = std::chrono::steady_clock::now();
+
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
+
     if (CountOfIteration > 0)
     {
         gen->printSpace();
+        std::cout << endl << " duration = " << duration/1000000.0 << " sec." << endl;
         getchar();
     }
 }

@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     mLife *gen_bool = new mLife(inputfile);
 
 
-    mUniverse life(gen_bool, iterations);
+    mUniverse life(gen, iterations);
     life.Go();
 
 
@@ -38,5 +38,6 @@ int main(int argc, char* argv[])
 
     delete gen_bool;
     delete gen;
+
     return 0;
 }

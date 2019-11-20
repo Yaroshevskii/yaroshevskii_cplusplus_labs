@@ -18,7 +18,7 @@
 #include <cstdlib>
 #include <cstdint>
 #include <fstream>
-
+#include <chrono>
 
 //cell
 //generation
