@@ -22,10 +22,10 @@ public:
     {
         gen = static_cast<IGeneration*>(igen);
     }
-    /*mUniverse(IGeneration *igen, int iterations) : CountOfIteration(iterations)
+    mUniverse(mLife *igen, int iterations) : CountOfIteration(iterations)
     {
-        gen = igen;
-    }*/
+        gen = static_cast<IGeneration*>(igen);
+    }
     void Go();
     void Start();
     void Start(int);

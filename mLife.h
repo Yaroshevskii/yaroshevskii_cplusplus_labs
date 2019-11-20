@@ -16,6 +16,8 @@
 #include <cctype>
 #include <windows.h>
 #include <cstdlib>
+#include <cstdint>
+#include <fstream>
 
 
 //cell
@@ -69,6 +71,27 @@ public:
     void NextGen();
     bool isAliveExist();
     ~mGeneration(){};
+};
+
+
+class mLife : public IGeneration
+{
+    int32_t m;
+    int32_t n;
+
+    std::vector<std::vector<bool>> board;
+
+public:
+    mLife();
+    mLife(int32_t rows, int32_t columns);
+    mLife(string FileName);
+    void set(int32_t row, int32_t column, bool value);
+
+    bool isAlive(int32_t row, int32_t column);
+    int32_t numb_of_alive_neighboors(int32_t row, int32_t column);
+    void NextGen();//void DoStep();
+    bool isAliveExist();
+    void printSpace();
 };
 
 

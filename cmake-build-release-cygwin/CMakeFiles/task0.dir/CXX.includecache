@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.cpp
+mLife.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
+
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
 iostream
 -
 vector
@@ -29,18 +33,22 @@ windows.h
 -
 cstdlib
 -
+cstdint
+-
+fstream
+-
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.cpp
 mUniverse.h
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h
 mLife.h
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp
 mLife.h
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
 mUniverse.h
-/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h
 

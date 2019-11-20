@@ -123,6 +123,60 @@ task0/fast:
 	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/build
 .PHONY : task0/fast
 
+mLife.o: mLife.cpp.o
+
+.PHONY : mLife.o
+
+# target to build an object file
+mLife.cpp.o:
+	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/mLife.cpp.o
+.PHONY : mLife.cpp.o
+
+mLife.i: mLife.cpp.i
+
+.PHONY : mLife.i
+
+# target to preprocess a source file
+mLife.cpp.i:
+	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/mLife.cpp.i
+.PHONY : mLife.cpp.i
+
+mLife.s: mLife.cpp.s
+
+.PHONY : mLife.s
+
+# target to generate assembly for a file
+mLife.cpp.s:
+	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/mLife.cpp.s
+.PHONY : mLife.cpp.s
+
+mUniverse.o: mUniverse.cpp.o
+
+.PHONY : mUniverse.o
+
+# target to build an object file
+mUniverse.cpp.o:
+	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/mUniverse.cpp.o
+.PHONY : mUniverse.cpp.o
+
+mUniverse.i: mUniverse.cpp.i
+
+.PHONY : mUniverse.i
+
+# target to preprocess a source file
+mUniverse.cpp.i:
+	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/mUniverse.cpp.i
+.PHONY : mUniverse.cpp.i
+
+mUniverse.s: mUniverse.cpp.s
+
+.PHONY : mUniverse.s
+
+# target to generate assembly for a file
+mUniverse.cpp.s:
+	$(MAKE) -f CMakeFiles/task0.dir/build.make CMakeFiles/task0.dir/mUniverse.cpp.s
+.PHONY : mUniverse.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... task0"
 	@echo "... edit_cache"
+	@echo "... mLife.o"
+	@echo "... mLife.i"
+	@echo "... mLife.s"
+	@echo "... mUniverse.o"
+	@echo "... mUniverse.i"
+	@echo "... mUniverse.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

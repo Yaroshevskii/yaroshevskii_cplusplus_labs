@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin"/>
+				<Option working_dir="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin"/>
+				<Option working_dir="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="task0">
-				<Option output="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/task0.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin"/>
+				<Option output="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/task0.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 task0"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 task0"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="task0/fast">
-				<Option output="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/task0.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin"/>
+				<Option output="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/task0.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,39 +63,39 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 task0/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 task0/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin"/>
+				<Option working_dir="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/cplusplus_lab/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/cmake-build-release-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.cpp">
+		<Unit filename="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.cpp">
 			<Option target="task0"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/cplusplus_labs/cplusplus_lab/mLife.h">
+		<Unit filename="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h">
 			<Option target="task0"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.cpp">
+		<Unit filename="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.cpp">
 			<Option target="task0"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/cplusplus_labs/cplusplus_lab/mUniverse.h">
+		<Unit filename="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mUniverse.h">
 			<Option target="task0"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/cplusplus_labs/cplusplus_lab/main.cpp">
+		<Unit filename="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp">
 			<Option target="task0"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/cplusplus_labs/cplusplus_lab/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

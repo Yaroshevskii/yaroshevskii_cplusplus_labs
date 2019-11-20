@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/main.cpp
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.cpp
+mLife.h
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
+
+/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/mLife.h
 iostream
 -
 vector
@@ -28,5 +32,9 @@ cctype
 windows.h
 -
 cstdlib
+-
+cstdint
+-
+fstream
 -
 

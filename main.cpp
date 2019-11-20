@@ -18,11 +18,25 @@ int main(int argc, char* argv[])
     string inputfile = argv[1];
     int iterations = atoi(argv[2]);
 
-    mGeneration *gen = new mGeneration(inputfile);
-    mUniverse life(gen, iterations);
 
+
+
+
+
+
+    mGeneration *gen = new mGeneration(inputfile);
+    mLife *gen_bool = new mLife(inputfile);
+
+
+    mUniverse life(gen_bool, iterations);
     life.Go();
 
+
+
+
+
+
+    delete gen_bool;
     delete gen;
     return 0;
 }
