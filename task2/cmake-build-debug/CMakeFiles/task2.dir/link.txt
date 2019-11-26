@@ -1,0 +1,1 @@
+/usr/bin/c++.exe  -O3 -Wall -Wextra -g  -Wl,--enable-auto-import CMakeFiles/task2.dir/main.cpp.o  -o task2.exe -Wl,--out-implib,libtask2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
