@@ -7,6 +7,7 @@ class Literal {
 public:
     Literal(const double v) : _val(v) {}
     double eval() const { return _val; }
+    double eval(double&) const { return _val; }
 private:
     const double _val;
 };
@@ -82,6 +83,10 @@ operator/(ExprT1 e1, ExprT2 e2)
 }
 
 
+template <class ExprT>
+double eval(ExprT e) { return e.eval(); }
+
+
 template<class T>
 class Identity
 {
@@ -101,7 +106,17 @@ double integrate (ExprT e,double from,double to,size_t n)
 int main() {
 
     Identity<double> x;
-    cout << integrate (x*x,0.0,1.0,10) << endl;
+    //double ret = integrate ( x*x+1.0 ,0.0,1.0,1000);
+    cout << integrate ((x*x)+2,0.0,1.0,1000) << endl;
+
+
+   /*
+   double xx=1;
+   Variable x = xx;
+   cout << ((x+2)*3).eval() << endl;
+    */
+
+
 
     return 0;
 }
