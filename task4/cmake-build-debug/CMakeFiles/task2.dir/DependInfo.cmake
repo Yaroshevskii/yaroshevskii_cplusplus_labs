@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/main.cpp" "/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles/task2.dir/main.cpp.o"
+  "/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.cpp" "/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles/task2.dir/HuffmanNode.cpp.o"
+  "/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/main.cpp" "/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles/task2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

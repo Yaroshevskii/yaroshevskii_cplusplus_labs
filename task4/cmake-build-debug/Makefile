@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4
+CMAKE_SOURCE_DIR = /cygdrive/c/cplusplus_labs/cplusplus_lab/task4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ task2/fast:
 	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/build
 .PHONY : task2/fast
 
+HuffmanNode.o: HuffmanNode.cpp.o
+
+.PHONY : HuffmanNode.o
+
+# target to build an object file
+HuffmanNode.cpp.o:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/HuffmanNode.cpp.o
+.PHONY : HuffmanNode.cpp.o
+
+HuffmanNode.i: HuffmanNode.cpp.i
+
+.PHONY : HuffmanNode.i
+
+# target to preprocess a source file
+HuffmanNode.cpp.i:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/HuffmanNode.cpp.i
+.PHONY : HuffmanNode.cpp.i
+
+HuffmanNode.s: HuffmanNode.cpp.s
+
+.PHONY : HuffmanNode.s
+
+# target to generate assembly for a file
+HuffmanNode.cpp.s:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/HuffmanNode.cpp.s
+.PHONY : HuffmanNode.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... task2"
 	@echo "... edit_cache"
+	@echo "... HuffmanNode.o"
+	@echo "... HuffmanNode.i"
+	@echo "... HuffmanNode.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

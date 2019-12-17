@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/Andy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /cygdrive/c/Users/qandy/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4
+CMAKE_SOURCE_DIR = /cygdrive/c/cplusplus_labs/cplusplus_lab/task4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/task2.dir/depend.make
@@ -59,28 +59,43 @@ include CMakeFiles/task2.dir/flags.make
 
 CMakeFiles/task2.dir/main.cpp.o: CMakeFiles/task2.dir/flags.make
 CMakeFiles/task2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/task2.dir/main.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/main.cpp.o -c /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/task2.dir/main.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/main.cpp.o -c /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/main.cpp
 
 CMakeFiles/task2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task2.dir/main.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/main.cpp > CMakeFiles/task2.dir/main.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/main.cpp > CMakeFiles/task2.dir/main.cpp.i
 
 CMakeFiles/task2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task2.dir/main.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/main.cpp -o CMakeFiles/task2.dir/main.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/main.cpp -o CMakeFiles/task2.dir/main.cpp.s
+
+CMakeFiles/task2.dir/HuffmanNode.cpp.o: CMakeFiles/task2.dir/flags.make
+CMakeFiles/task2.dir/HuffmanNode.cpp.o: ../HuffmanNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/task2.dir/HuffmanNode.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/HuffmanNode.cpp.o -c /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.cpp
+
+CMakeFiles/task2.dir/HuffmanNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task2.dir/HuffmanNode.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.cpp > CMakeFiles/task2.dir/HuffmanNode.cpp.i
+
+CMakeFiles/task2.dir/HuffmanNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task2.dir/HuffmanNode.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.cpp -o CMakeFiles/task2.dir/HuffmanNode.cpp.s
 
 # Object files for target task2
 task2_OBJECTS = \
-"CMakeFiles/task2.dir/main.cpp.o"
+"CMakeFiles/task2.dir/main.cpp.o" \
+"CMakeFiles/task2.dir/HuffmanNode.cpp.o"
 
 # External object files for target task2
 task2_EXTERNAL_OBJECTS =
 
 task2.exe: CMakeFiles/task2.dir/main.cpp.o
+task2.exe: CMakeFiles/task2.dir/HuffmanNode.cpp.o
 task2.exe: CMakeFiles/task2.dir/build.make
 task2.exe: CMakeFiles/task2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable task2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable task2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/task2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -93,6 +108,6 @@ CMakeFiles/task2.dir/clean:
 .PHONY : CMakeFiles/task2.dir/clean
 
 CMakeFiles/task2.dir/depend:
-	cd /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4 /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4 /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug /cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/cmake-build-debug/CMakeFiles/task2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/cplusplus_labs/cplusplus_lab/task4 /cygdrive/c/cplusplus_labs/cplusplus_lab/task4 /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/cmake-build-debug/CMakeFiles/task2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/task2.dir/depend
 

@@ -6,7 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/task4/main.cpp
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.cpp
+cstdio
+-
+iostream
+-
+fstream
+-
+HuffmanNode.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.h
+
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.h
+cstdint
+-
+fstream
+-
+string
+-
+vector
+-
+
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/main.cpp
 iostream
 -
 
