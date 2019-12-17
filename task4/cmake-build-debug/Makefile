@@ -123,6 +123,33 @@ task2/fast:
 	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/build
 .PHONY : task2/fast
 
+Huffman.o: Huffman.cpp.o
+
+.PHONY : Huffman.o
+
+# target to build an object file
+Huffman.cpp.o:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/Huffman.cpp.o
+.PHONY : Huffman.cpp.o
+
+Huffman.i: Huffman.cpp.i
+
+.PHONY : Huffman.i
+
+# target to preprocess a source file
+Huffman.cpp.i:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/Huffman.cpp.i
+.PHONY : Huffman.cpp.i
+
+Huffman.s: Huffman.cpp.s
+
+.PHONY : Huffman.s
+
+# target to generate assembly for a file
+Huffman.cpp.s:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/Huffman.cpp.s
+.PHONY : Huffman.cpp.s
+
 HuffmanNode.o: HuffmanNode.cpp.o
 
 .PHONY : HuffmanNode.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... task2"
 	@echo "... edit_cache"
+	@echo "... Huffman.o"
+	@echo "... Huffman.i"
+	@echo "... Huffman.s"
 	@echo "... HuffmanNode.o"
 	@echo "... HuffmanNode.i"
 	@echo "... HuffmanNode.s"

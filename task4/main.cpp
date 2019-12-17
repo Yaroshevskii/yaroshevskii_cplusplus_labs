@@ -1,6 +1,6 @@
+#include <cstdio>
 #include <iostream>
-
-
+#include "Huffman.h"
 
 
 
