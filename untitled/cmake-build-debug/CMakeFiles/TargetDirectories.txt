@@ -1,3 +1,0 @@
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/untitled/cmake-build-debug/CMakeFiles/untitled.dir
-/cygdrive/c/cplusplus_labs/yaroshevskii_cplusplus_labs/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
