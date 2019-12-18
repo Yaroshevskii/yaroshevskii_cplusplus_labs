@@ -7,8 +7,36 @@
 #IncludeRegexTransform: 
 
 /cygdrive/c/cplusplus_labs/cplusplus_lab/task4/Huffman.cpp
+Huffman.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/Huffman.h
 
-/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/main.cpp
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/Huffman.h
+string
+-
+map
+-
+cstdio
+-
 iostream
+-
+fstream
+-
+vector
+-
+algorithm
+-
+stack
+-
+HuffmanNode.h
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.h
+
+/cygdrive/c/cplusplus_labs/cplusplus_lab/task4/HuffmanNode.h
+cstdint
+-
+fstream
+-
+string
+-
+vector
 -
 
