@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 using namespace std;
 
 
@@ -103,12 +104,34 @@ double integrate (ExprT e,double from,double to,size_t n)
     return step*sum;
 }
 
+
+
+constexpr double f1(double x) {
+    return x * x + x + 1;
+}
+
+constexpr double integration(double left,
+                             double right,
+                             int32_t steps,
+                             double (*func)(double )) {
+    double res = 0;
+    double h = (right - left) / steps;
+    for (int32_t i = 0; i <= steps; ++i) {
+        res += func(left + h*i) * h;
+    }
+    return res;
+}
+
 int main() {
 
+    /*
     Identity<double> x;
     //double ret = integrate ( x*x+1.0 ,0.0,1.0,1000);
     cout << integrate ((x*x)+2,0.0,1.0,1000) << endl;
+    */
 
+    constexpr auto intergral = integration(0, 2, 1000, f1);
+    std::cout << "integration = " << intergral << std::endl;
 
    /*
    double xx=1;
