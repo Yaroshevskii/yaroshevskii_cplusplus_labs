@@ -43,30 +43,15 @@ using make_function_t = typename ::prototype::function_n_t_impl<N, prototype::fu
 
 namespace match
 {
-
-    template<class F>
-            struct funcTraits: std::false_type {};
-
-    template<class retType, class C, class... Args>
-            struct funcTraits<retType (C::*)(Args...) const>: std::true_type {
-                typedef retType ret;
-                using args = std::tuple<Args...>;
-            };
-
+    using mFunc =  double(*)(double);
 
     template<class F1, class F2, class... Args>
-    auto multiply(F1 f1, F2 f2, std::tuple<Args...> )
+    constexpr auto multiply2( F1 f1, F2 f2, std::tuple<Args...>)
     {
-        return[=](Args... args)
+        return[=](Args... args, Args... args2)
         {
-            return f1(args...)*f2(args...);
+            return ( (f1(args)*f2(args2)) + ...);
         };
-    }
-
-    template <class F1, class F2>
-    auto multiply(F1 f1, F2 f2)
-    {
-        return multiply(f1, f2, typename funcTraits<decltype(&F1::operator())>::args{} );
     }
 }
 
