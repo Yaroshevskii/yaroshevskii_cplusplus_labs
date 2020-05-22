@@ -9,7 +9,7 @@ using namespace std;
 template<class T>
 bool close_enough(T a, T b, typename std::enable_if<std::is_integral<T>::value >::type* = 0)
 {
-    return a = b;
+    return a == b;
 }
 
 template<class T>
