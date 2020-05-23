@@ -9,7 +9,7 @@ using namespace std;
 template<class T>
 bool close_enough(T a, T b, typename std::enable_if<std::is_integral<T>::value >::type* = 0)
 {
-    return a = b;
+    return a == b;
 }
 
 template<class T>
@@ -39,16 +39,18 @@ auto suml(T val, Args... values)
     return val + suml(values...);
 }
 
-template<typename F>
-auto sumf(F func)
+
+template<typename F, typename T>
+auto sumf(F func, T val)
 {
-    return 0;
+    return val;
 }
 
+
 template<typename F, typename T, typename ...Args>
-auto sumf(F func, T val1, T val2, Args... values)
+auto sumf(F func, T val1,  Args... values)
 {
-    return func(val1, val2) + sumf(func, values...);
+    return func(sumf(func, values...), val1);
 }
 
 
@@ -58,50 +60,111 @@ auto multiply_func(A func1, B func2)
     return [=](auto a, auto b) {return func1(a,b) * func2(a,b);};
 }
 
-
-m_weak_ptr<int> gw;
-
-void f()
+int main(int argc, char *argv[])
 {
-    auto spt = gw.lock();
-    if (spt.get())
-    {
-        std::cout << *spt.get() << "\n";
-    } else
-    {
-        std::cout << "gw is expired\n";
-    }
+
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+
 }
 
-int main()
+TEST(finalcheck, test1)
 {
-    float a = 10.0, b = 11.0;
     int aa = 1, bb = 2;
+    int cc = close_enough(aa, bb);
+    EXPECT_EQ(cc, 0);
+}
 
-    cout << close_enough(a, b) << endl;
-    cout << close_enough(aa, bb) << endl;
+TEST(finalcheck, test2)
+{
+    int aa = 2;
+    int bb = 2;
+    int cc = close_enough(aa, bb);
+    EXPECT_EQ(cc, 1);
+}
 
-    cout << sum(2, 2, 1, 1) << endl;
+TEST(finalcheck, test3)
+{
+    double aa = 2;
+    double bb = 2;
+    double cc = close_enough(aa, bb);
+    EXPECT_EQ(cc, 1);
+}
 
-    cout << suml(1, 2, 3, 4) << endl;
+TEST(finalcheck, test4)
+{
+    double aa = 2.01;
+    double bb = 2;
+    double cc = close_enough(aa, bb);
+    EXPECT_EQ(cc, 0);
+}
 
-    cout << sumf( [](auto a, auto b){return a*b;} , 1,2, 3, 4) << endl;
+TEST(finalcheck, test5)
+{
+    EXPECT_EQ(sum(2, 2, 1, 1), 6);
+}
 
+TEST(finalcheck, test6)
+{
+    EXPECT_EQ(sum(2, 2, 1, 5), 10);
+}
+
+TEST(finalcheck, test7)
+{
+    EXPECT_EQ(suml(5, 5, 5, 5), 20);
+}
+
+TEST(finalcheck, test8)
+{
+    auto f = [](auto a, auto b){return a*b;};
+    EXPECT_EQ(sumf( f, 1, 2, 3, 4), 24);
+}
+
+TEST(finalcheck, test9)
+{
+    auto f = [](auto a, auto b){return a+b;};
+    EXPECT_EQ(sumf( f, 1, 2, 3, 4), 10);
+}
+
+TEST(finalcheck, test10)
+{
+    auto f = [](auto a, auto b){return a-b;};
+    EXPECT_EQ(sumf( f, 4, 3, 2, 1), -8);
+}
+
+TEST(finalcheck, test11)
+{
+    auto f = [](float a, float b){return a/b;};
+    EXPECT_EQ(sumf( f, 2, 5, 2, 100), 5);
+}
+
+TEST(finalcheck, test12)
+{
     auto f1 = [](auto a, auto b){return a+b;};
     auto f2 = [](auto a, auto b){return a*b;};
     auto f3 = multiply_func(f1, f2);
-    cout << f3(1, 2) << endl;
+    EXPECT_EQ(f3(1, 2), 6);
+}
 
+TEST(finalcheck, test13)
+{
+    m_weak_ptr<int> gw;
 
+    int *pp = new int(42);
+    m_shared_ptr<int> msp(pp);
+    gw = msp;
+
+    EXPECT_EQ(gw.use_count(), 1);
+}
+
+TEST(finalcheck, test14)
+{
+    m_weak_ptr<int> gw;
     {
         int *pp = new int(42);
         m_shared_ptr<int> msp(pp);
         gw = msp;
-
-        f();
     }
-    f();
 
-
-    return 0;
+    EXPECT_EQ(gw.use_count(), 0);
 }
