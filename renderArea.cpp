@@ -57,12 +57,9 @@ void mWindow::draw()
     SodSolver.vsolve();
     TimeLabel->setText("Time: " + QString::number(SodSolver.gTime));
 
-    if (Timer->isActive() && (SodSolver.ENDTIME - SodSolver.gTime) >= (SodSolver.dt - 1e-3) )
-    {
-        SodSolver.gTime += SodSolver.dt;
-    } else if (std::fabs(SodSolver.ENDTIME - SodSolver.gTime) >= 1e-9)
-    {
-        toStopHandle();
+    if (Timer->isActive()){
+        uint16_t isStop = SodSolver.TimeHandler(0);
+        if (isStop > 0) toStopHandle();
     }
 
     for(size_t i=0; i < SodSolver.CELLS; i++)
@@ -140,10 +137,7 @@ void mWindow::playBut()
     if (Timer->isActive() )
     {
         toStopHandle();
-        if (SodSolver.gTime > 0)
-        {
-            SodSolver.gTime -= SodSolver.dt;
-        }
+        SodSolver.TimeHandler(1);
     }
     else
     {
@@ -154,33 +148,27 @@ void mWindow::playBut()
 void mWindow::ForBut()
 {
     toStopHandle();
-    if (SodSolver.gTime < SodSolver.ENDTIME)
-    {
-        SodSolver.gTime += SodSolver.dt;
-    }
+    SodSolver.TimeHandler(2);
     draw();
 }
 
 void mWindow::RevBut()
 {
     toStopHandle();
-    if (SodSolver.gTime > 1e-6)
-    {
-        SodSolver.gTime -= SodSolver.dt;
-    }
+    SodSolver.TimeHandler(3);
     draw();
 }
 
 void mWindow::StartBut()
 {
-    SodSolver.gTime = 0;
+    SodSolver.TimeHandler(5);
     toStartHandle();
 }
 
 void mWindow::EndBut()
 {
     toStopHandle();
-    SodSolver.gTime = SodSolver.ENDTIME;
+    SodSolver.TimeHandler(4);
     draw();
 }
 
@@ -195,7 +183,7 @@ void mWindow::StopBut()
 mWindow::mWindow(QWidget *parent) :
         QWidget(parent)
 {
-    SodSolver.gTime = 0;
+    SodSolver.TimeHandler(5);
 
     this->setWindowTitle("Solver for Riemman problem");
     mainLayout = new QGridLayout;

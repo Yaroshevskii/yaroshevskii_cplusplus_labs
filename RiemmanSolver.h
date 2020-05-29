@@ -58,6 +58,7 @@ public:
     fruit SAMPLE(resolve_type, resolve_type, resolve_type);
     void vsolve();
     void LoadParametrs(size_t item, resolve_type val);
+    uint16_t TimeHandler(uint16_t);
 
 };
 

@@ -68,6 +68,46 @@ void RiemmanSolver::LoadParametrs(size_t item, resolve_type val)
     *parametrs[item] = val;
 }
 
+uint16_t RiemmanSolver::TimeHandler(uint16_t type)
+{
+    uint16_t ret = 0;
+    switch (type)
+    {
+        case 0:
+            if ((ENDTIME - gTime) >= (dt - 1e-3)) {
+                gTime += dt;
+            } else if (std::fabs(ENDTIME - gTime) >= 1e-9) {
+                ret = 1;
+            }
+        break;
+        case 1:
+            if (gTime > 0)
+            {
+                gTime -= dt;
+            }
+        break;
+        case 2:
+            if (gTime < ENDTIME)
+            {
+                gTime += dt;
+            }
+        break;
+        case 3:
+            if (gTime > 1e-6)
+            {
+                gTime -= dt;
+            }
+        break;
+        case 4:
+            gTime = ENDTIME;
+        break;
+        default:
+            gTime = 0.0;
+    }
+
+    return ret;
+}
+
 
 
 std::pair<resolve_type, resolve_type> RiemmanSolver::PreFun(resolve_type P, resolve_type DK, resolve_type PK, resolve_type CK)
