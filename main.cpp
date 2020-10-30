@@ -503,6 +503,7 @@ TEST(check, test2) {
     EXPECT_EQ(copyRNK == RNK(G, 32), true);
     EXPECT_EQ(copyRNK2 == RNK(G, 32), true);
     EXPECT_EQ(copyRNK3 == RNK(G, 32), true);
+    EXPECT_EQ(testRNK.capacity() == 0, true);
 }
 
 TEST(check, test3) {
@@ -568,7 +569,7 @@ TEST(check, test4) {
     EXPECT_EQ(mmap[G], 25);
 
 
-    
+
     RNK RNK1 = RNK(G, 32);
     RNK RNK2 = RNK(G, 32);
 
@@ -587,6 +588,7 @@ TEST(check, test5) {
     }
 
     EXPECT_EQ(mrnk.cardinality(C) == n, true);
+    EXPECT_EQ(mrnk == RNK(C, n), true);
 }
 
 /*
