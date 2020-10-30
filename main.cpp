@@ -374,7 +374,6 @@ bool RNK::InnerComprasion(T1 && t1, T2 && t2)
 template<typename T, typename T2>
 bool RNK::isComplementary(T && item1, T2 && item2)
 {
-    std::cout << "isComplementary ref = " << std::is_reference<T>::value << '\n';
     return RNK::InnerIsComplementary(forward<T>(item1), forward<T2>(item2));
 }
 
@@ -428,6 +427,11 @@ unordered_map<enum Nucl, int, std::hash<int>> RNK::cardinality_map() const
 {
     unordered_map<enum Nucl, int, std::hash<int>> ret;
 
+    for (uint16_t i = A; i <= U; i++)
+    {
+//        cout << " nucl = " << (Nucl)i << " cardinality = " << this->cardinality((Nucl)i) << endl;
+        ret.insert(pair((Nucl)i , this->cardinality((Nucl)i)) );
+    }
     return ret;
 }
 
@@ -547,6 +551,24 @@ TEST(check, test4) {
     EXPECT_EQ(testRNK3.cardinality(A) == 1, true);
 
 
+    RNK testRNK5 = RNK(G, 32);
+    testRNK5[1] = A;
+    testRNK5[2] = C;
+    testRNK5[3] = C;
+    testRNK5[4] = U;
+    testRNK5[5] = U;
+    testRNK5[6] = U;
+    testRNK5[7] = U;
+    unordered_map<enum Nucl, int, std::hash<int>> mmap = testRNK5.cardinality_map();
+
+
+    EXPECT_EQ(mmap[A], 1);
+    EXPECT_EQ(mmap[C], 2);
+    EXPECT_EQ(mmap[U], 4);
+    EXPECT_EQ(mmap[G], 25);
+
+
+    
     RNK RNK1 = RNK(G, 32);
     RNK RNK2 = RNK(G, 32);
 
