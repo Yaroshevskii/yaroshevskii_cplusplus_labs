@@ -15,12 +15,13 @@
 #include <cmath>
 #include <cstring>
 #include <type_traits>
+#include <unordered_map>
 
 using namespace std;
 using namespace std::literals;
 
 
-enum Nucl {A = 0, G = 1 , C = 2 , U = 3, E = 4 };
+enum Nucl {A = 0, G = 1 , C = 2 , U = 3, E = 4};
 
 using mVar = uint64_t;
 
@@ -59,6 +60,9 @@ class RNK {
     static bool InnerComprasion(T1&& t1, T2&& t2);
 
     template <typename T1>
+    static RNK& InnerNot(T1 && t1);
+
+    template <typename T1>
     static void InnerCopyConstructor(RNK & t1, T1 && t2);
 public:
 
@@ -71,7 +75,7 @@ public:
         template<typename T>
         explicit reference(size_t num, T && ptrMother);
 
-        reference& operator=(const enum Nucl& item);
+        reference& operator=(const enum Nucl & item);
         reference& operator=(const enum Nucl& item) const = delete;
         operator int();
     };
@@ -89,6 +93,8 @@ public:
 
     void trim(size_t lastIndex);
     void split(size_t index);
+    [[nodiscard]] size_t cardinality( enum Nucl value) const;
+    [[nodiscard]] unordered_map<enum Nucl, int, std::hash<int>> cardinality_map() const;
 
     template<typename T>
     RNK& operator+(T && r1) const  = delete;
@@ -109,6 +115,14 @@ public:
 
     template<typename T1, typename T2>
     friend bool operator==(T1 && r1, T2 && r2);
+
+    template<typename T1, typename T2>
+    friend bool operator!=(T1 && r1, T2 && r2);
+
+    template<typename T1>
+    friend RNK& operator!(T1 && r1);
+
+    RNK& operator!() const = delete;
 
     void printFullSequence() const;
 
