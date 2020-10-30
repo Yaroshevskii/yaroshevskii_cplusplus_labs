@@ -35,6 +35,7 @@ RNK::reference& RNK::reference::operator=(const enum Nucl& item)
 }
 
 
+
 RNK::reference::operator int()
 {
     return item;
@@ -115,7 +116,7 @@ void RNK::fillSequence(mVar *sourcePoint, enum Nucl nucleotide, size_t startPosI
         if (countOfFreeBits != 0)
         {
             size_t newCountOfNuclInBytes = newSizeOfNucl / 4;
-            countOfBytes = newCountOfNuclInBytes;
+            countOfBytes = newCountOfNuclInBytes == 0 ? sizeof(mVar) : newCountOfNuclInBytes;
 
             mVar iMask = 0, cMask = 0-4;
             for (uint16_t i = 0; i< (countOfFreeBits/2 - 1); i++)
@@ -129,7 +130,6 @@ void RNK::fillSequence(mVar *sourcePoint, enum Nucl nucleotide, size_t startPosI
             mSequence[mSizeInOwnWord-1] = (mSequence[mSizeInOwnWord-1] & cMask) | iMask;
         }
     }
-
 
     mSequence = (mVar*)realloc(sourcePoint, countOfBytes );
 
@@ -213,6 +213,7 @@ void RNK::InnerOperatorSquadBreaks(T && item, size_t itemOfNucl) const
 {
     if( (itemOfNucl+1) > mCountOfNucl)
     {
+
         size_t nucl_in_word = sizeof(mVar) * 4;
         size_t newSizeInOwnWord = ceil((double)(itemOfNucl+1)  / nucl_in_word);
 
@@ -254,6 +255,22 @@ const RNK::reference RNK::operator[](size_t itemOfNucl) const
 
 template<typename T1, typename T2>
 RNK& operator+(T1 && r1, T2 && r2) {
+
+    if (r1.mSequence == r2.mSequence)
+    {
+        size_t oldCountNucl = r1.mCountOfNucl;
+
+        r1.mCountOfNucl *= 2;
+        r1.mSizeInOwnWord *= 2;
+
+        r1.mSequence = (mVar*)realloc(r1.mSequence, sizeof(mVar)*r1.mSizeInOwnWord );
+
+        for (uint32_t i=0; i< oldCountNucl; i++)
+        {
+            r1.operator[](oldCountNucl+i) = r1.operator[](i).item;
+        }
+        return r1;
+    }
 
     size_t newSizeOfNucl = r1.mCountOfNucl + r2.mCountOfNucl;
     size_t newSizeInOwnWord = (newSizeOfNucl-1)/(sizeof(mVar)*4) + 1;
@@ -352,6 +369,8 @@ bool RNK::InnerComprasion(T1 && t1, T2 && t2)
     return true;
 }
 
+
+
 template<typename T, typename T2>
 bool RNK::isComplementary(T && item1, T2 && item2)
 {
@@ -373,6 +392,11 @@ bool RNK::InnerIsComplementary(T && item1, T2 && item2)
     return true;
 }
 
+
+size_t RNK::capacity() const
+{
+    return this->mSizeInOwnWord;
+}
 void RNK::trim(size_t lastIndex)
 {
     if ( lastIndex > (mCountOfNucl-1) )
@@ -436,6 +460,114 @@ RNK::~RNK()
 }
 
 
+int main(int argc, char** argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
+TEST(check, test1) {
+    RNK testRNK = RNK(G, 32);
+    const RNK ctestRNK = RNK(G, 32);
+
+
+
+    EXPECT_EQ(testRNK == ctestRNK, true);
+    EXPECT_EQ(testRNK == RNK(G, 32), true);
+    EXPECT_EQ(testRNK != RNK(G, 31), true);
+
+    testRNK[31] = C;
+//    ctestRNK[31] = C; error
+    EXPECT_EQ((testRNK[31]).item == C, true);
+
+    EXPECT_EQ(testRNK != ctestRNK, true);
+    EXPECT_EQ(ctestRNK != testRNK, true);
+    EXPECT_EQ(ctestRNK != move(testRNK), true);
+    EXPECT_EQ(move(ctestRNK) != move(testRNK), true);
+    EXPECT_EQ(move(ctestRNK) != testRNK, true);
+    EXPECT_EQ(testRNK == RNK(G, 32), false);
+    EXPECT_EQ(testRNK != RNK(G, 32), true);
+    EXPECT_EQ(testRNK != move(RNK(G, 32)), true);
+}
+
+TEST(check, test2) {
+    RNK testRNK = RNK(G, 32);
+    const RNK ctestRNK = RNK(G, 32);
+    RNK copyRNK = RNK(testRNK);
+    RNK copyRNK2 = RNK(ctestRNK);
+    RNK copyRNK3 = move(testRNK);
+
+    EXPECT_EQ(copyRNK == RNK(G, 32), true);
+    EXPECT_EQ(copyRNK2 == RNK(G, 32), true);
+    EXPECT_EQ(copyRNK3 == RNK(G, 32), true);
+}
+
+TEST(check, test3) {
+    RNK testRNK = RNK(G, 32);
+    RNK testRNK2 = RNK(G, 32);
+
+    const RNK ctestRNK = RNK(G, 32);
+    RNK sumRNK = testRNK + testRNK;
+    RNK sumRNK2 = RNK(G, 32) + testRNK2;
+    RNK sumRNK3 = testRNK2 + RNK(G, 32);
+
+
+//    ctestRNK + RNK(G, 32);  error
+
+    EXPECT_EQ(sumRNK == RNK(G, 64), true);
+    EXPECT_EQ(sumRNK2 == RNK(G, 64), true);
+    EXPECT_EQ(sumRNK3 == RNK(G, 64), true);
+
+    RNK sumRNK4 = RNK();
+    sumRNK4 = move(sumRNK3) + ctestRNK;
+    EXPECT_EQ(sumRNK4 == RNK(G, 96), true);
+}
+
+TEST(check, test4) {
+    RNK testRNK = RNK(G, 32);
+    RNK testRNK2 = RNK(G, 32);
+
+    RNK testRNK3 = RNK(G, 32);
+    const RNK testRNK4 = RNK(G, 32);
+    testRNK3[31] = A;
+
+    testRNK.trim(15);
+    EXPECT_EQ(testRNK.cardinality(G) == 16, true);
+    EXPECT_EQ(testRNK == RNK(G, 16), true);
+    EXPECT_EQ(testRNK == RNK(G, 17), false);
+
+    testRNK2.split(1);
+    EXPECT_EQ(testRNK2.cardinality(G) == 31, true);
+    EXPECT_EQ(testRNK2 == RNK(G, 31), true);
+    EXPECT_EQ(testRNK2 == RNK(G, 32), false);
+
+    testRNK3 = !testRNK3;
+//    !testRNK4 error
+    EXPECT_EQ((testRNK3)[0].item == A, true);
+    EXPECT_EQ(testRNK3.cardinality(G) == 31, true);
+    EXPECT_EQ(testRNK3.cardinality(A) == 1, true);
+
+
+    RNK RNK1 = RNK(G, 32);
+    RNK RNK2 = RNK(G, 32);
+
+    RNK1[1] = A;
+    RNK2[30] = A;
+
+    EXPECT_EQ(RNK::isComplementary(RNK1, RNK2), true);
+}
+
+TEST(check, test5) {
+    size_t n = 10000000;
+    RNK mrnk = RNK();
+
+    for(size_t i=0; i<n; i++){
+        mrnk[i] = C;
+    }
+
+    EXPECT_EQ(mrnk.cardinality(C) == n, true);
+}
+
+/*
 int main() {
 
 
@@ -523,36 +655,6 @@ int main() {
 //    testRNK.split(32);
 //    testRNK.printFullSequence();
 
-
-    /*
-    testRNK[126] = A;
-    testRNK[127] = A;
-    testRNK[128] = A;
-    testRNK.printFullSequence();
-
-    testRNK[129] = A;
-    testRNK.printFullSequence();
-*/
-
-/*
-    RNK testRNK1 = RNK(A, 4);
-    RNK testRNK2 = RNK(A, 4);
-
-    testRNK1[0] = A;
-    testRNK1[1] = C;
-    testRNK1[2] = G;
-    testRNK1[3] = U;
-
-    testRNK2[3] = A;
-    testRNK2[2] = C;
-    testRNK2[1] = G;
-    testRNK2[0] = U;
-
-
-    testRNK1.printFullSequence();
-    testRNK2.printFullSequence();
-
-*/
-
     return 0;
 }
+*/

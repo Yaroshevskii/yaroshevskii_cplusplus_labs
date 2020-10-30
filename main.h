@@ -16,6 +16,7 @@
 #include <cstring>
 #include <type_traits>
 #include <unordered_map>
+#include <gtest/gtest.h>
 
 using namespace std;
 using namespace std::literals;
@@ -75,6 +76,7 @@ public:
         template<typename T>
         explicit reference(size_t num, T && ptrMother);
 
+
         reference& operator=(const enum Nucl & item);
         reference& operator=(const enum Nucl& item) const = delete;
         operator int();
@@ -91,10 +93,14 @@ public:
     template<typename T, typename T2>
     static bool isComplementary(T && item1, T2 && item2);
 
+    size_t capacity() const;
     void trim(size_t lastIndex);
     void split(size_t index);
+    void trim(size_t lastIndex) const = delete;
+    void split(size_t index) const = delete;
     [[nodiscard]] size_t cardinality( enum Nucl value) const;
     [[nodiscard]] unordered_map<enum Nucl, int, std::hash<int>> cardinality_map() const;
+
 
     template<typename T>
     RNK& operator+(T && r1) const  = delete;
