@@ -1,3 +1,0 @@
-/cygdrive/c/Users/Andy/CLionProjects/cplusplus_lab0/task0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Andy/CLionProjects/cplusplus_lab0/task0/cmake-build-debug/CMakeFiles/task0.dir
-/cygdrive/c/Users/Andy/CLionProjects/cplusplus_lab0/task0/cmake-build-debug/CMakeFiles/edit_cache.dir
